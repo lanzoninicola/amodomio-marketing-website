@@ -1,9 +1,5 @@
 import type { LinksFunction } from "@remix-run/node";
 import { type V2_MetaFunction } from "@remix-run/node";
-import { Link } from "@remix-run/react";
-import { ArrowRight } from "lucide-react";
-import Container from "~/components/layout/container/container";
-import { LogoTransparent } from "~/components/primitives/logo/logo";
 
 // https://smart-pizza-marketing.framer.ai/
 
@@ -14,6 +10,42 @@ export const meta: V2_MetaFunction = () => {
             name: "description",
             content: "Bem vindo a A Modo Mio - Pizza Delivery & Al Taglio",
         },
+        {
+            name: "keywords",
+            content: "pizzaria, pizza, pizza delivery, pizza italiana, massa italiana, pizza romana, italia pizza, pizzaria italia",
+        },
+        {
+            name: "og:title",
+            content: "A Modio Mio - Pizza Delivery & Al Taglio",
+        },
+        {
+            name: "og:description",
+            content: "Pizza de massa italiana autêntica feita por um verdadeiro italiano, criado e crescido em Itália.",
+        },
+        {
+            name: "og:image",
+            content: "https://amodomio.com.br/images/logo.png",
+        },
+        {
+            name: "og:url",
+            content: "https://amodomio.com.br/",
+        },
+        {
+            name: "og:type",
+            content: "website",
+        },
+        {
+            name: "og:site_name",
+            content: "A Modio Mio - Pizza Delivery & Al Taglio",
+        },
+        {
+            name: "og:locale",
+            content: "pt_BR",
+        },
+
+
+
+
     ];
 };
 
@@ -27,9 +59,34 @@ export const links: LinksFunction = () => [
         href: "https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Inconsolata&family=BioRhyme+Expanded:wght@700&display=swap",
         rel: "stylesheet",
     },
+    {
+        href: "/apple-touch-icon.png",
+        rel: "apple-touch-icon"
+    },
+    {
+        rel: "icon",
+        type: "image/png",
+        sizes: "32x32",
+        href: "/favicon-32x32.png"
+    },
+    {
+        rel: "icon",
+        type: "image/png",
+        sizes: "16x16",
+        href: "/favicon-16x16.png"
+    },
+    {
+        rel: "manifest",
+        href: "/site.webmanifest"
+    }
 ];
 
-
+/**
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+            <link rel="manifest" href="/site.webmanifest">
+ */
 
 export default function HomePage() {
 
@@ -41,12 +98,23 @@ export default function HomePage() {
                     <LogoJSX />
                 </div>
 
-                <div className="absolute bottom-40 left-0 w-full">
+                <div className="absolute bottom-40 left-0 w-full z-20">
                     <div className="flex items-center justify-center text-center mx-6 mb-12">
-                        <p className="text-white font-bold leading-tight tracking-wide">Pizza de massa italiana autêntica feita por um verdadeiro italiano.</p>
+                        <p className="text-white font-bold leading-tight tracking-wide max-w-prose">Pizza de massa italiana <span className="text-brand-yellow">autêntica</span> feita por um <span className="text-brand-yellow">verdadeiro italiano</span>, criado e crescido em Itália.</p>
                     </div>
                     <div className="text-center">
+                        <p className="font-accent text-white font-bold leading-tight tracking-wide text-sm">em breve em</p>
                         <p className="font-accent text-white font-bold leading-tight tracking-wide text-sm">PATO BRANCO</p>
+                    </div>
+                </div>
+
+                <div className="absolute bottom-10 left-0 w-full z-10" data-element="flag">
+                    <div className="flex items-center justify-center text-center">
+                        <div className="flex gap-1">
+                            <div className="bg-brand-green-italia w-3 h-5"></div>
+                            <div className="bg-white w-3 h-5"></div>
+                            <div className="bg-brand-red-italia w-3 h-5"></div>
+                        </div>
                     </div>
                 </div>
 
@@ -83,14 +151,13 @@ export default function HomePage() {
 function LogoJSX() {
     return (
         <div className="flex flex-col w-max text-center">
-            <h1 className="relative font-logo text-[3.5rem] leading-none md:text-7xl text-white">a modo mio</h1>
+            <h1 className="relative font-logo text-[3.5rem] leading-none md:text-[5.25rem] text-white">a modo mio</h1>
             <div className="flex flex-col mb-2">
                 <div className="bg-brand-green-italia h-1"></div>
                 <div className="bg-white h-1"></div>
                 <div className="bg-brand-red-italia h-1"></div>
             </div>
             <h2 className="relative font-accent text-xs md:text-lg text-white uppercase tracking-widest">pizza delivery & al taglio</h2>
-
         </div>
     )
 }
