@@ -100,10 +100,10 @@ export default function HomePage() {
 
                 <div className="absolute bottom-40 left-0 w-full z-20">
                     <div className="flex items-center justify-center text-center mx-6 mb-12">
-                        <p className="text-white font-bold leading-tight tracking-wide max-w-prose">Pizza de massa italiana <span className="text-brand-yellow">autêntica</span> feita por um <span className="text-brand-yellow">verdadeiro italiano</span>, criado e crescido em Itália.</p>
+                        <p className="text-white font-bold leading-tight tracking-wide max-w-prose">Pizza de massa italiana <span className="text-brand-yellow">autêntica</span> feita por um <span className="text-brand-yellow">verdadeiro italiano</span>, nascido e crescido na Itália.</p>
                     </div>
                     <div className="text-center">
-                        <p className="font-accent text-white font-bold leading-tight tracking-wide text-sm">em breve em</p>
+                        <p className="font-accent text-white font-bold leading-tight tracking-wide text-sm">em breve a</p>
                         <p className="font-accent text-white font-bold leading-tight tracking-wide text-sm">PATO BRANCO</p>
                     </div>
                 </div>
